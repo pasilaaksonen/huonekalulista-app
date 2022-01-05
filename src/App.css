@@ -46,6 +46,12 @@
 .print-button {
   position: relative;
   top: 45px;
+  left: 5px;
+}
+
+.cancel-button {
+  position: relative;
+  top: 45px;
 }
 
 .form-inline {
