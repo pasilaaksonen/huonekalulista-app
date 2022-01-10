@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Table } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
 import moment from 'moment';
 
-let day = ""
+let day = "";
 
 const Lista = React.forwardRef(( props, ref ) => {
 
-    const [ prepareTable, setPrepareTable ] = useState([])
+    const [ prepareTable, setPrepareTable ] = useState([]);
     //Apulista tulostettavan listan luomiseen
     const components = [
         ["ruuvit", "Ruuvi", "A-2", "kpl"],
@@ -18,11 +18,11 @@ const Lista = React.forwardRef(( props, ref ) => {
         ["vanerilevyt", "Vanerilevy","D-1", "kpl"],
         ["koivulankut", "Koivulankku","D-4", "m"],
         ["lasiovet", "Lasiovi","E-1", "kpl"],
-    ]
+    ];
 
     //Komponentin käynnistyessä käsitellään data taulukkoon aseteltavaksi
     useEffect(() => {
-        let tempArray = []
+        let tempArray = [];
         day = moment(props.pdfLists.pvm).format("DD.MM.YYYY");
         const pdfObjectAsArray = Object.entries(props.pdfLists);
         components.forEach(component => {
@@ -31,16 +31,16 @@ const Lista = React.forwardRef(( props, ref ) => {
                 pdfObjectAsArray.forEach(arrayItem => {
                     if(arrayItem[0] === component[0]) {
                         itemCount = arrayItem[1]
-                    }  
-                })
+                    }; 
+                });
                 if (itemCount > 0) {
                     tempArray.push([component[1], `${itemCount} ${component[3]}`, component[2]])
-                }
-            }         
-        })
-        setPrepareTable(tempArray)
+                };
+            };         
+        });
+        setPrepareTable(tempArray);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, []);
 
     return (
         <div ref={ref} className="final-table">
@@ -73,4 +73,4 @@ const Lista = React.forwardRef(( props, ref ) => {
     )
 })
 
-export default Lista
+export default Lista;

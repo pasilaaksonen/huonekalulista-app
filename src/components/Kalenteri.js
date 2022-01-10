@@ -1,5 +1,5 @@
-import DatePicker from 'react-datepicker'
-import  'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-datepicker';
+import  'react-datepicker/dist/react-datepicker.css';
 
 function Kalenteri({ startDate, setStartDate }) {
     return (  
@@ -15,4 +15,4 @@ function Kalenteri({ startDate, setStartDate }) {
     )
 }
 
-export default Kalenteri
+export default Kalenteri;

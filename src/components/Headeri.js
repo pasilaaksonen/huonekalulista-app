@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
-import 'bootstrap/dist/css/bootstrap.css'
-import { Navbar } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css';
+import { Navbar } from 'react-bootstrap';
 
 function Header() {
     return (
@@ -15,4 +15,4 @@ function Header() {
     );
 }
 
-export default Header
+export default Header;

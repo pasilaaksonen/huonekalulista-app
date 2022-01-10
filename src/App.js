@@ -9,15 +9,15 @@ import LuoLista from "./components/LuoLista";
 
 function App() {
 
-  const [ pdfLists, setPdfLists ] = useState(null)
-  const [ printMode, setPrintMode ] = useState(false)
+  const [ pdfLists, setPdfLists ] = useState(null);
+  const [ printMode, setPrintMode ] = useState(false);
   const [ startDate, setStartDate ] = useState(new Date());
   const componentRef = useRef();
 
   const handlePrint = () => {
-    setPrintMode(true)
-    print()
-  }
+    setPrintMode(true);
+    print();
+  };
 
   const print = useReactToPrint({
     content: () => componentRef.current,
