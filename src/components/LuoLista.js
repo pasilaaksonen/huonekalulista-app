@@ -23,6 +23,11 @@ function LuoLista({ startDate, setPdfLists }) {
 
     //Uuden huonekalun lisäys huonekalukoriin
     const handleAddNew = () => {
+        if (numberOfItems <= 0) {
+            setSelectedItem("Vitriini");
+            setNumberOfItems(1);
+            return
+        }
         const newID = uuidv4();
         let itemComponents = null;
         if (selectedItem === "Vitriini") {
