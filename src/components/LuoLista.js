@@ -31,33 +31,33 @@ function LuoLista({ startDate, setPdfLists }) {
         const newID = uuidv4();
         let itemComponents = null;
         if (selectedItem === "Vitriini") {
-            itemComponents = ["x2 Lasiovi", "x1 vanerilevy", "x1 hyllylevy", "x16 ruuvi", "x2 vedin"]
-            setLasiovet(lasiovet + 2 * numberOfItems)
-            setVanerilevyt(vanerilevyt + 1 * numberOfItems)
-            setHyllylevyt(hyllylevyt + 1 * numberOfItems)
-            setRuuvit(ruuvit + 16 * numberOfItems)
-            setVetimet(vetimet + 2 * numberOfItems)
+            itemComponents = ["x2 Lasiovi", "x1 vanerilevy", "x1 hyllylevy", "x16 ruuvi", "x2 vedin"];
+            setLasiovet(lasiovet + 2 * numberOfItems);
+            setVanerilevyt(vanerilevyt + 1 * numberOfItems);
+            setHyllylevyt(hyllylevyt + 1 * numberOfItems);
+            setRuuvit(ruuvit + 16 * numberOfItems);
+            setVetimet(vetimet + 2 * numberOfItems);
         };
         if (selectedItem === "Tuoli") {
-            itemComponents = ["x1 kangaspala", "x8 ruuvi", "3m koivulankku"]
-            setKangaspalat(kangaspalat + 1 * numberOfItems)
-            setRuuvit(ruuvit + 8 * numberOfItems)
-            setKoivulankut(koivulankut + 3 * numberOfItems)
+            itemComponents = ["x1 kangaspala", "x8 ruuvi", "3m koivulankku"];
+            setKangaspalat(kangaspalat + 1 * numberOfItems);
+            setRuuvit(ruuvit + 8 * numberOfItems);
+            setKoivulankut(koivulankut + 3 * numberOfItems);
         };
         if (selectedItem === "Sivupöytä") {
-            itemComponents = ["1,4m koivulankku", "x1 pieni mäntylevy", "x4 ruuvi", "x1 vedin"]
-            setKoivulankut(koivulankut + 1.4 * numberOfItems)
-            setPienetMantylevyt(pienetMantylevyt + 1 * numberOfItems)
-            setRuuvit(ruuvit + 4 * numberOfItems)
-            setVetimet(vetimet + 1 * numberOfItems)
+            itemComponents = ["1,4m koivulankku", "x1 pieni mäntylevy", "x4 ruuvi", "x1 vedin"];
+            setKoivulankut(koivulankut + 1.4 * numberOfItems);
+            setPienetMantylevyt(pienetMantylevyt + 1 * numberOfItems);
+            setRuuvit(ruuvit + 4 * numberOfItems);
+            setVetimet(vetimet + 1 * numberOfItems);
         };
         if (selectedItem === "Kaappi") {
-            itemComponents = ["x1 iso mäntylevy", "x1 vanerilevy", "x2 vedin", "x20 ruuvi", "x2 hyllylevy"]
-            setIsotMantylevyt(isotMantylevyt + 1 * numberOfItems)
-            setVanerilevyt(vanerilevyt + 1 * numberOfItems)
-            setVetimet(vetimet + 2 * numberOfItems)
-            setRuuvit(ruuvit + 20 * numberOfItems)
-            setHyllylevyt(hyllylevyt + 2 * numberOfItems)
+            itemComponents = ["x1 iso mäntylevy", "x1 vanerilevy", "x2 vedin", "x20 ruuvi", "x2 hyllylevy"];
+            setIsotMantylevyt(isotMantylevyt + 1 * numberOfItems);
+            setVanerilevyt(vanerilevyt + 1 * numberOfItems);
+            setVetimet(vetimet + 2 * numberOfItems);
+            setRuuvit(ruuvit + 20 * numberOfItems);
+            setHyllylevyt(hyllylevyt + 2 * numberOfItems);
         };
         const newFurnitureListing = {
             id: newID,
@@ -76,32 +76,32 @@ function LuoLista({ startDate, setPdfLists }) {
     //Huonekalun poisto huonekalukorista
     const handleDeleteListItem = (id, itemNumber, itemName) => {
         if (itemName === "Vitriini") {
-            setLasiovet(lasiovet - 2 * itemNumber)
-            setVanerilevyt(vanerilevyt - 1 * itemNumber)
-            setHyllylevyt(hyllylevyt - 1 * itemNumber)
-            setRuuvit(ruuvit - 16 * itemNumber)
-            setVetimet(vetimet - 2 * itemNumber)
+            setLasiovet(lasiovet - 2 * itemNumber);
+            setVanerilevyt(vanerilevyt - 1 * itemNumber);
+            setHyllylevyt(hyllylevyt - 1 * itemNumber);
+            setRuuvit(ruuvit - 16 * itemNumber);
+            setVetimet(vetimet - 2 * itemNumber);
         };
         if (itemName === "Tuoli") {
-            setKangaspalat(kangaspalat - 1 * itemNumber)
-            setRuuvit(ruuvit - 8 * itemNumber)
-            setKoivulankut(koivulankut - 3 * itemNumber)
+            setKangaspalat(kangaspalat - 1 * itemNumber);
+            setRuuvit(ruuvit - 8 * itemNumber);
+            setKoivulankut(koivulankut - 3 * itemNumber);
         };
         if (itemName === "Sivupöytä") {
-            setKoivulankut(koivulankut - 1.4 * itemNumber)
-            setPienetMantylevyt(pienetMantylevyt - 1 * itemNumber)
-            setRuuvit(ruuvit - 4 * itemNumber)
-            setVetimet(vetimet - 1 * itemNumber)
+            setKoivulankut(koivulankut - 1.4 * itemNumber);
+            setPienetMantylevyt(pienetMantylevyt - 1 * itemNumber);
+            setRuuvit(ruuvit - 4 * itemNumber);
+            setVetimet(vetimet - 1 * itemNumber);
         };
         if (itemName === "Kaappi") {
-            setIsotMantylevyt(isotMantylevyt - 1 * itemNumber)
-            setVanerilevyt(vanerilevyt - 1 * itemNumber)
-            setVetimet(vetimet - 2 * itemNumber)
-            setRuuvit(ruuvit - 20 * itemNumber)
-            setHyllylevyt(hyllylevyt - 2 * itemNumber)
+            setIsotMantylevyt(isotMantylevyt - 1 * itemNumber);
+            setVanerilevyt(vanerilevyt - 1 * itemNumber);
+            setVetimet(vetimet - 2 * itemNumber);
+            setRuuvit(ruuvit - 20 * itemNumber);
+            setHyllylevyt(hyllylevyt - 2 * itemNumber);
         };
-        const tempList = newFurnitureList.filter(item => item.id !== id)
-        setNewFurnitureList(tempList)
+        const tempList = newFurnitureList.filter(item => item.id !== id);
+        setNewFurnitureList(tempList);
     };
 
     //Tulostettavan listan luonti
@@ -118,19 +118,19 @@ function LuoLista({ startDate, setPdfLists }) {
             koivulankut: koivulankut,
             lasiovet: lasiovet
         };
-        setPdfLists(newPdfList)
-        setNewFurnitureList([])
-        setPienetMantylevyt(0)
-        setLasiovet(0)
-        setRuuvit(0)
-        setVetimet(0)
-        setKangaspalat(0)
-        setKoivulankut(0)
-        setIsotMantylevyt(0)
-        setVanerilevyt(0)
-        setHyllylevyt(0)
-        setNumberOfItems(1)
-        setSelectedItem("Vitriini")
+        setPdfLists(newPdfList);
+        setNewFurnitureList([]);
+        setPienetMantylevyt(0);
+        setLasiovet(0);
+        setRuuvit(0);
+        setVetimet(0);
+        setKangaspalat(0);
+        setKoivulankut(0);
+        setIsotMantylevyt(0);
+        setVanerilevyt(0);
+        setHyllylevyt(0);
+        setNumberOfItems(1);
+        setSelectedItem("Vitriini");
     };
 
     return (
