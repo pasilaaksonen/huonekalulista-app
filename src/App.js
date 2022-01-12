@@ -17,6 +17,7 @@ function App() {
   const handlePrint = () => {
     setPrintMode(true);
     print();
+    setPdfLists(null)
   };
 
   const print = useReactToPrint({
