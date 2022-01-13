@@ -16,7 +16,7 @@ function ListaEsineet({ newFurnitureList, handleDeleteListItem }) {
                         <div className="fw-bold">{item.name}</div>
                         <ListGroup horizontal>
                             {item.itemComponents.map((listItem, key) => (
-                                <ListGroup.Item key={key}>{listItem}</ListGroup.Item>
+                                <ListGroup.Item key={key} className="listItem">{listItem}</ListGroup.Item>
                             ))}
                         </ListGroup>
                         </div>
