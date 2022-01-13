@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Form, ListGroup, Badge } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
-import { MdDeleteSweep } from 'react-icons/md';
+import ListaEsineet from "./ListaEsineet";
+import Kalenteri from "./Kalenteri";
+import listIcon from '../assets/listIcon.png'
+import { BsArrowsMove } from 'react-icons/bs';
 
-function LuoLista({ startDate, setPdfLists }) {
+function LuoLista({ startDate, setPdfLists, setStartDate }) {
 
     //Tilat valitulle huonekalulle, lukumäärälle ja huonekalukorille
     const [ selectedItem, setSelectedItem ] = useState('Vitriini');
@@ -134,56 +137,43 @@ function LuoLista({ startDate, setPdfLists }) {
     };
 
     return (
-        <div>
-           <div className="furniture-select">
-                <Form.Group controlId="formBasicSelect" >
-                    Valitse huonekalu:
-                    <Form.Control
-                        as="select"
-                        value={selectedItem}
-                        onChange={e => {
-                            setSelectedItem(e.target.value);
-                        }}
-                        className="select-furniture"
-                    >
-                    <option value="Vitriini">Vitriini</option>
-                    <option value="Tuoli">Tuoli</option>
-                    <option value="Sivupöytä">Sivupöytä</option>
-                    <option value="Kaappi">Kaappi</option>
-                    </Form.Control>
-                </Form.Group>
+        <>
+           <div className="Selections-container">
+            <BsArrowsMove className="arrow-icon"/>
+            <img src={listIcon} alt='list-icon' className="image" />
+            <h1 className="card-title">UUSI LISTA</h1>
+            <div className="Selection-fields">
+                <Kalenteri setStartDate={setStartDate} startDate={startDate} />
+                <div className="furniture-select">
+                        <Form.Group controlId="formBasicSelect" >
+                            Valitse huonekalu:
+                            <Form.Control
+                                as="select"
+                                value={selectedItem}
+                                onChange={e => {
+                                    setSelectedItem(e.target.value);
+                                }}
+                            >
+                            <option value="Vitriini">Vitriini</option>
+                            <option value="Tuoli">Tuoli</option>
+                            <option value="Sivupöytä">Sivupöytä</option>
+                            <option value="Kaappi">Kaappi</option>
+                            </Form.Control>
+                        </Form.Group>
+                    </div>
+                    Valitse lukumäärä:
+                    <div>
+                        <input type="number" min="1" value={numberOfItems} onChange={(e) => setNumberOfItems(e.target.value)}></input>
+                    </div>
             </div>
-            Valitse lukumäärä:
-            <div>
-                <input type="number" min="1" value={numberOfItems} onChange={(e) => setNumberOfItems(e.target.value)}></input>
+                <button onClick={handleAddNew} className="add-button roundCorner">Lisää</button>
             </div>
-            <button onClick={handleAddNew} className="add-button">Lisää</button>
-            <div className="furniture-cart">
-                <ListGroup as="ol" numbered className="w-50">
-                    {newFurnitureList.map(item => (
-                        <ListGroup.Item
-                        as="li"
-                        className="d-flex justify-content-between align-items-start"
-                        key={item.id}
-                        >
-                        <div className="ms-2 me-auto">
-                        <div className="fw-bold">{item.name}</div>
-                        <ListGroup horizontal>
-                            {item.itemComponents.map((listItem, key) => (
-                                <ListGroup.Item key={key}>{listItem}</ListGroup.Item>
-                            ))}
-                        </ListGroup>
-                        </div>
-                        <button className="editAndDelete" onClick={() => handleDeleteListItem(item.id,item.numberOfItems,item.name)}><MdDeleteSweep size="30px"/></button>
-                        <Badge variant="primary" pill>
-                            Lukumäärä: {item.numberOfItems}
-                        </Badge>
-                        </ListGroup.Item>
-                    ))}
-                </ListGroup>
-            </div>
-            { newFurnitureList.length > 0 && <button onClick={handleSaveList} className="create-button">Luo lista</button> }
-        </div>
+            <ListaEsineet 
+                newFurnitureList={newFurnitureList} 
+                handleDeleteListItem={handleDeleteListItem} 
+            />
+            { newFurnitureList.length > 0 && <button onClick={handleSaveList} className="create-button roundCorner">Luo lista</button> }
+        </>
     )
 }
 
