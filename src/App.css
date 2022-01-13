@@ -1,3 +1,7 @@
+.App {
+  background-color: #EAEAEA;
+}
+
 .editAndDelete {
   border: none;
   background-color: unset;
@@ -41,6 +45,7 @@
 .final-table {
   position: relative;
   top: 50px;
+  background-color: white;
 }
 
 .print-button {
@@ -67,9 +72,69 @@
 }
 
 .form-control {
-  width: 11% !important;
+  width: 22% !important;
 }
 
 span.input-group-addon {
   width: 50px !important;
+}
+
+.roundCorner  
+{  
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #2AA59B;
+    background-color: #2AA59B;  
+    color:#FFFFFF;  
+    text-align :center;  
+    font-family:arial, helvetica, sans-serif;  
+    padding: 6px 10px 10px 10px;  
+    font-weight:bold;  
+    width:100px;  
+    height:40px;  
+}
+
+.Selections-container {
+  padding: 1.5rem;
+  padding-top: 48px;
+  padding-bottom: 30px;
+  width: 900px;
+  box-shadow: 0 0 28px 4px rgba(0,0,0,0.1);
+  background-color: white;
+}
+
+.image {
+  position: relative;
+  bottom: 29px;
+}
+
+.card-title {
+  display:inline-block;
+  vertical-align:middle;
+  position: relative;
+  bottom: 20px;
+  left: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
+
+.image {
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.Selection-fields {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.arrow-icon {
+  float: right;
+  position: relative;
+  bottom: 40px;
+  left: 15px;
+}
+
+.badge {
+  background-color: #FF9549;
 }
